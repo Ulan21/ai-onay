@@ -351,12 +351,23 @@ body {
      font-family: Arial, sans-serif;
 }
 
+/* Заголовок "Баға: жеңілдікпен" */
+.price-title {
+    text-align: center;
+    color: #bd0cc8;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 25px 0 10px;
+    letter-spacing: 0.5px;
+}
+
 /* ===== Стрелки ===== */
 
 .price-arrows {
     position: relative;
     height: 140px;
     margin-bottom: -40px;
+    margin-top: 10px;
 }
 
 /* Общая линия */
@@ -370,14 +381,14 @@ body {
     transform-origin: top center;
 }
 
-/* Левая стрелка */
+/* Левая стрелка — наклон влево */
 .arrow-left {
-    transform: rotate(30deg);
+    transform: translateX(-2.5px) rotate(-30deg);
 }
 
-/* Правая стрелка */
+/* Правая стрелка — наклон вправо */
 .arrow-right {
-    transform: rotate(-30deg);
+    transform: translateX(-2.5px) rotate(30deg);
 }
 
 /* ===== Цены ===== */
@@ -391,15 +402,17 @@ body {
 
 .price-item {
     text-align: center;
+    flex: 1;
 }
 
 /* Круг цены */
 .price-circle {
     border: 2px solid #000;
     border-radius: 50%;
-    padding: 20px 35px;
-    font-size: 32px;
+    padding: 20px 25px;
+    font-size: 26px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 /* Подпись */
@@ -494,10 +507,12 @@ body {
         font-size: 40px;
     }
 
+    /* ВАЖНО: добавили payment-section, иначе кнопки вылезали за экран */
     .gallery-section,
     .views-section,
     .marquee,
-    .reviews-section {
+    .reviews-section,
+    .payment-section {
         width: calc(100% + 30px);
         margin-left: -15px;
     }
@@ -524,6 +539,11 @@ body {
         font-size: 22px;
     }
 
+    .marquee-track span {
+        font-size: 22px;
+        margin-right: 40px;
+    }
+
     .access-subtitle {
         font-size: 16px;
     }
@@ -531,6 +551,86 @@ body {
     .access-text {
         font-size: 15px;
     }
+
+    /* AI grid — 13 длинных пунктов на узком экране */
+    .ai-grid {
+        gap: 12px;
+    }
+
+    .ai-item {
+        font-size: 13.5px;
+        padding: 14px 10px;
+        min-height: 100px;
+        border-radius: 14px;
+    }
+
+    .ai-title {
+        font-size: 26px;
+        margin: 30px 0;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    /* Цены */
+    .price-box {
+        font-size: 22px;
+        padding: 20px 5px;
+    }
+
+    .price-title {
+        font-size: 22px;
+        margin: 20px 0 5px;
+    }
+
+    .price-wrapper {
+        padding: 0 10px;
+        gap: 10px;
+    }
+
+    .price-circle {
+        padding: 18px 14px;
+        font-size: 19px;
+    }
+
+    .price-label {
+        font-size: 16px;
+    }
+
+    .price-arrows {
+        height: 110px;
+        margin-bottom: -30px;
+    }
+
+    .arrow {
+        height: 110px;
+    }
+
+    /* Платежи */
+    .payment-card {
+        font-size: 13px;
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .payment-card img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* image-card на мобиле — поменьше отступы */
+    .whiteheart {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+    }
+
+    .blue-box {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
     .pricing-title {
         font-size: 26px;
         padding: 20px;
@@ -559,8 +659,27 @@ body {
         font-size: 11px;
         padding: 20px;
     }
-     .payment-card {
-        font-size: 15px;
+}
+
+/* Совсем узкие экраны (старые/маленькие телефоны) */
+@media (max-width: 360px) {
+
+    .price-circle {
+        padding: 16px 10px;
+        font-size: 16px;
     }
 
+    .price-label {
+        font-size: 14px;
+    }
+
+    .ai-item {
+        font-size: 12.5px;
+        min-height: 90px;
+        padding: 12px 8px;
+    }
+
+    .payment-card {
+        font-size: 11.5px;
+    }
 }
